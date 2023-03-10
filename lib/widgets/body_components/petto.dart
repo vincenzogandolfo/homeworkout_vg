@@ -23,7 +23,7 @@ class Petto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.greenAccent.shade100,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(40.0),
       ),

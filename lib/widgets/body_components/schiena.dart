@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_images/carousel_images.dart';
 
-class Addome extends StatelessWidget {
-  final String eserciziAddome;
-  Addome({super.key, required this.eserciziAddome});
+class Schiena extends StatelessWidget {
+  final String eserciziSchiena;
+  Schiena({super.key, required this.eserciziSchiena});
 
-  final List<String> immaginiAddome = [
-    'images/crunch_down.png',
-    'images/fisarmonica.png',
-    'images/addome_laterale.png',
-    'images/ginocchia_alzate.png',
-    'images/alzate_gambe_unite.png',
-    'images/alzate_gambe_singole.png',
+  final List<String> immaginiSchiena = [
+    'images/tirate_orizzontali.png',
+    'images/tirate_parallele.png',
+    'images/tirate_reverse.png',
+    'images/aperture_orizzontali.png',
+    'images/aperture_parallele.png',
+    'images/tirate_orizzontali_barra.png',
+    'images/tirate_reverse_barra.png',
   ];
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.greenAccent.shade100,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(40.0),
       ),
@@ -26,7 +27,7 @@ class Addome extends StatelessWidget {
         width: 300,
         child: CarouselImages(
           scaleFactor: 0.1,
-          listImages: immaginiAddome,
+          listImages: immaginiSchiena,
           height: 450.0,
           borderRadius: 40.0,
           verticalAlignment: Alignment.center,

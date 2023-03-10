@@ -23,7 +23,7 @@
         </intent>
     </queries>
    <application
-        android:label="Home Workout  VG"
+        android:label="HomeWorkout VG"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

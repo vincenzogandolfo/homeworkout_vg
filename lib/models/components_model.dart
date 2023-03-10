@@ -12,10 +12,10 @@ class BodyModel extends StatelessWidget {
       width: 80,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Colors.black,
+          color: Colors.greenAccent.shade100,
           width: 8,
         ),
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Image.asset(
         bodyImage,

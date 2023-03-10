@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'screen/esercizi_screen.dart';
 import 'screen/motivazione_screen.dart';
 import 'screen/contatti_screen.dart';
@@ -17,41 +18,41 @@ class HomePage extends StatelessWidget {
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: <Color>[Colors.deepPurpleAccent, Colors.white]),
+                  colors: <Color>[Colors.greenAccent, Colors.white]),
             ),
           ),
           title: const Text(
-            'Home Workout  VG',
+            'HomeWorkout  VG',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
           centerTitle: true,
           bottom: const TabBar(
-            indicatorColor: Colors.deepPurpleAccent,
+            indicatorColor: Colors.greenAccent,
             indicatorWeight: 8,
             tabs: [
               Tab(
                 icon: Icon(
-                  Icons.fitness_center,
+                  FontAwesomeIcons.heart,
                   color: Colors.black,
-                  size: 32,
+                  size: 28,
                 ),
               ),
               Tab(
                 icon: Icon(
-                  Icons.textsms,
+                  FontAwesomeIcons.dumbbell,
                   color: Colors.black,
-                  size: 32,
+                  size: 28,
                 ),
               ),
               Tab(
                 icon: Icon(
-                  Icons.person,
+                  FontAwesomeIcons.message,
                   color: Colors.black,
-                  size: 32,
+                  size: 28,
                 ),
               )
             ],
@@ -59,8 +60,8 @@ class HomePage extends StatelessWidget {
         ),
         body: const TabBarView(
           children: [
-            Esercizi(),
             Motivazione(),
+            Esercizi(),
             Contatti(),
           ],
         ),

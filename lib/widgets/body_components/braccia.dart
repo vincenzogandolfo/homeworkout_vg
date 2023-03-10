@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_images/carousel_images.dart';
 
-class Schiena extends StatelessWidget {
-  final String eserciziSchiena;
-  Schiena({super.key, required this.eserciziSchiena});
+class Braccia extends StatelessWidget {
+  final String eserciziBraccia;
+  Braccia({super.key, required this.eserciziBraccia});
 
-  final List<String> immaginiSchiena = [
-    'images/tirate_orizzontali.png',
-    'images/tirate_parallele.png',
-    'images/tirate_reverse.png',
-    'images/aperture_orizzontali.png',
-    'images/aperture_parallele.png',
-    'images/tirate_orizzontali_barra.png',
-    'images/tirate_reverse_barra.png',
+  final List<String> immaginiBraccia = [
+    'images/bicipiti_orizzontali.png',
+    'images/bicipiti_paralleli.png',
+    'images/bicipiti_reverse.png',
+    'images/tricipiti_inbasso.png',
+    'images/tricipiti_inavanti.png',
+    'images/tricipiti_dietro.png',
+    'images/bicipiti_orizzontali_barra.png',
+    'images/bicipiti_reverse_barra.png',
+    'images/tricipiti_inbasso_barra.png',
   ];
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.greenAccent.shade100,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(40.0),
       ),
@@ -27,7 +29,7 @@ class Schiena extends StatelessWidget {
         width: 300,
         child: CarouselImages(
           scaleFactor: 0.1,
-          listImages: immaginiSchiena,
+          listImages: immaginiBraccia,
           height: 450.0,
           borderRadius: 40.0,
           verticalAlignment: Alignment.center,

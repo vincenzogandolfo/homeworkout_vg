@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:homeworkout_vg/components/body_model.dart';
 
-import '../../components/body_components/addome.dart';
-import '../../components/body_components/braccia.dart';
-import '../../components/body_components/cardio.dart';
-import '../../components/body_components/gambe.dart';
-import '../../components/body_components/glutei.dart';
-import '../../components/body_components/petto.dart';
-import '../../components/body_components/schiena.dart';
-import '../../components/body_components/spalle.dart';
-import '../../components/body_components/stretch.dart';
+import '../../models/components_model.dart';
+import '../../models/type_button_model.dart';
+import '../../widgets/body_components/addome.dart';
+import '../../widgets/body_components/braccia.dart';
+import '../../widgets/body_components/cardio.dart';
+import '../../widgets/body_components/gambe.dart';
+import '../../widgets/body_components/glutei.dart';
+import '../../widgets/body_components/petto.dart';
+import '../../widgets/body_components/schiena.dart';
+import '../../widgets/body_components/spalle.dart';
+import '../../widgets/body_components/stretch.dart';
 
 class Esercizi extends StatelessWidget {
   const Esercizi({Key? key}) : super(key: key);
@@ -17,136 +18,184 @@ class Esercizi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      body: Column(
         children: [
-          SizedBox(
-            width: double.infinity,
-            height: double.infinity,
-            child: Image.asset(
-              'images/esercizi.png',
-              fit: BoxFit.fill,
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                Image.asset(
+                  'images/logo.png',
+                  height: 60,
+                ),
+                const Text(
+                  'Esercizi',
+                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                ),
+                const Text(
+                  'Seleziona una parte del corpo!',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
           ),
-          Positioned(
-            bottom: 80,
-            left: 0,
-            right: 0,
+          Expanded(
+            flex: 3,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/petto.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Petto(
-                            eserciziPetto: 'Petto',
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          GestureDetector(
+                            child:
+                                const BodyModel(bodyImage: 'images/petto.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Petto(
+                                  eserciziPetto: 'Petto',
+                                ),
+                              );
+                            },
                           ),
-                        );
-                      },
-                    ),
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/schiena.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Schiena(
-                            eserciziSchiena: 'Schiena',
+                          GestureDetector(
+                            child: const BodyModel(
+                                bodyImage: 'images/schiena.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Schiena(
+                                  eserciziSchiena: 'Schiena',
+                                ),
+                              );
+                            },
                           ),
-                        );
-                      },
-                    ),
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/spalle.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Spalle(
-                            eserciziSpalle: 'Spalle',
+                          GestureDetector(
+                            child:
+                                const BodyModel(bodyImage: 'images/spalle.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Spalle(
+                                  eserciziSpalle: 'Spalle',
+                                ),
+                              );
+                            },
                           ),
-                        );
-                      },
-                    ),
-                  ],
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          GestureDetector(
+                            child: const BodyModel(
+                                bodyImage: 'images/braccia.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Braccia(
+                                  eserciziBraccia: 'Braccia',
+                                ),
+                              );
+                            },
+                          ),
+                          GestureDetector(
+                            child:
+                                const BodyModel(bodyImage: 'images/gambe.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Gambe(
+                                  eserciziGambe: 'Gambe',
+                                ),
+                              );
+                            },
+                          ),
+                          GestureDetector(
+                            child:
+                                const BodyModel(bodyImage: 'images/glutei.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Glutei(
+                                  eserciziGlutei: 'Glutei',
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          GestureDetector(
+                            child:
+                                const BodyModel(bodyImage: 'images/cardio.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Cardio(
+                                  eserciziCardio: 'Cardio',
+                                ),
+                              );
+                            },
+                          ),
+                          GestureDetector(
+                            child:
+                                const BodyModel(bodyImage: 'images/addome.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Addome(
+                                  eserciziAddome: 'Addome',
+                                ),
+                              );
+                            },
+                          ),
+                          GestureDetector(
+                            child: const BodyModel(
+                                bodyImage: 'images/stretch.png'),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) => Stretch(
+                                  eserciziStretch: 'Stretch',
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/braccia.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Braccia(
-                            eserciziBraccia: 'Braccia',
-                          ),
-                        );
-                      },
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.all(28),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.greenAccent,
                     ),
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/gambe.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Gambe(
-                            eserciziGambe: 'Gambe',
-                          ),
-                        );
-                      },
+                    child: Row(
+                      children: [
+                        const TypeButtonModel('Uomo'),
+                        Container(
+                          height: 40,
+                          width: 1,
+                          color: Colors.white,
+                        ),
+                        const TypeButtonModel('Donna'),
+                      ],
                     ),
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/glutei.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Glutei(
-                            eserciziGlutei: 'Glutei',
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/cardio.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Cardio(
-                            eserciziCardio: 'Cardio',
-                          ),
-                        );
-                      },
-                    ),
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/addome.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Addome(
-                            eserciziAddome: 'Addome',
-                          ),
-                        );
-                      },
-                    ),
-                    GestureDetector(
-                      child: const BodyModel(bodyImage: 'images/stretch.png'),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => Stretch(
-                            eserciziStretch: 'Stretch',
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+                  ),
                 ),
               ],
             ),
@@ -156,17 +205,3 @@ class Esercizi extends StatelessWidget {
     );
   }
 }
-
-/*
-GestureDetector(
-                    child: const BodyModel(bodyImage: 'images/petto.png'),
-                    onTap: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) => Petto(
-                          eserciziPetto: 'Petto',
-                        ),
-                      );
-                    },
-                  ),
-*/

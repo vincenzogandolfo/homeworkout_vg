@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_images/carousel_images.dart';
 
-class Glutei extends StatelessWidget {
-  final String eserciziGlutei;
-  Glutei({super.key, required this.eserciziGlutei});
+class Cardio extends StatelessWidget {
+  final String eserciziCardio;
+  Cardio({super.key, required this.eserciziCardio});
 
-  final List<String> immaginiGlutei = [
-    'images/sumo_squat.png',
-    'images/glutei_laterali.png',
-    'images/glutei_dietro.png',
-    'images/glutei_dietro_dxsx.png',
-    'images/sumo_squat_barra.png',
+  final List<String> immaginiCardio = [
+    'images/corsa.png',
+    'images/bici.png',
+    'images/jump_squat.png',
+    'images/skip.png',
+    'images/jumping_jack.png',
   ];
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.greenAccent.shade100,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(40.0),
       ),
@@ -25,7 +25,7 @@ class Glutei extends StatelessWidget {
         width: 300,
         child: CarouselImages(
           scaleFactor: 0.1,
-          listImages: immaginiGlutei,
+          listImages: immaginiCardio,
           height: 450.0,
           borderRadius: 40.0,
           verticalAlignment: Alignment.center,

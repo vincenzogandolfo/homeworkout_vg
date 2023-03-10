@@ -8,6 +8,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
   ]);
   runApp(const App());
 }
@@ -26,7 +27,7 @@ class App extends StatelessWidget {
         nextScreen: const HomePage(),
         splashTransition: SplashTransition.scaleTransition,
         backgroundColor: Colors.white,
-        duration: 3000,
+        duration: 2000,
       ),
     );
   }
