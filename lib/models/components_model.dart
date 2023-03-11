@@ -15,7 +15,7 @@ class BodyModel extends StatelessWidget {
           color: Colors.greenAccent.shade100,
           width: 8,
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Image.asset(
         bodyImage,

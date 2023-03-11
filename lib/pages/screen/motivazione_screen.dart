@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homeworkout_vg/models/top_screen_model.dart';
 
 import '../../models/text_white_model.dart';
 
@@ -10,33 +11,9 @@ class Motivazione extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                Image.asset(
-                  'images/logo.png',
-                  height: 60,
-                ),
-                const Text(
-                  'Motivazione',
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const Text(
-                  'Il Fitness non è solo fatica ma..',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
+          const TopScreenModel(
+            title: 'Motivazione',
+            subtitle: 'Il Fitness non è solo fatica ma..',
           ),
           Expanded(
             flex: 3,
@@ -79,10 +56,7 @@ class Motivazione extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(
-                    child: Container(
-                  color: Colors.white,
-                )),
+                Expanded(child: Container()),
               ],
             ),
           ),

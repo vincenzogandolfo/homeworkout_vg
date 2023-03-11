@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:homeworkout_vg/models/collegamento_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:homeworkout_vg/models/top_screen_model.dart';
 
 class Contatti extends StatelessWidget {
   const Contatti({Key? key}) : super(key: key);
@@ -15,27 +16,9 @@ class Contatti extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                Image.asset(
-                  'images/logo.png',
-                  height: 60,
-                ),
-                const Text(
-                  'Contatti',
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-                ),
-                const Text(
-                  'Hai bisogno di una scheda di allenamento su misura?',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
+          const TopScreenModel(
+            title: 'Contatti',
+            subtitle: 'Hai bisogno di una scheda di allenamento su misura?',
           ),
           Expanded(
             flex: 3,
@@ -64,10 +47,7 @@ class Contatti extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
-                    child: Container(
-                  color: Colors.white,
-                )),
+                Expanded(child: Container()),
               ],
             ),
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:homeworkout_vg/models/tab_icon_model.dart';
+import 'package:homeworkout_vg/pages/screen/profilo_screen.dart';
 import 'screen/esercizi_screen.dart';
 import 'screen/motivazione_screen.dart';
 import 'screen/contatti_screen.dart';
@@ -10,7 +12,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           flexibleSpace: Container(
@@ -26,7 +28,7 @@ class HomePage extends StatelessWidget {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
           centerTitle: true,
@@ -35,24 +37,23 @@ class HomePage extends StatelessWidget {
             indicatorWeight: 8,
             tabs: [
               Tab(
-                icon: Icon(
-                  FontAwesomeIcons.heart,
-                  color: Colors.black,
-                  size: 28,
+                icon: TabIconModel(
+                  tabIcon: FontAwesomeIcons.heart,
                 ),
               ),
               Tab(
-                icon: Icon(
-                  FontAwesomeIcons.dumbbell,
-                  color: Colors.black,
-                  size: 28,
+                icon: TabIconModel(
+                  tabIcon: FontAwesomeIcons.dumbbell,
                 ),
               ),
               Tab(
-                icon: Icon(
-                  FontAwesomeIcons.message,
-                  color: Colors.black,
-                  size: 28,
+                icon: TabIconModel(
+                  tabIcon: FontAwesomeIcons.user,
+                ),
+              ),
+              Tab(
+                icon: TabIconModel(
+                  tabIcon: FontAwesomeIcons.solidMessage,
                 ),
               )
             ],
@@ -62,6 +63,7 @@ class HomePage extends StatelessWidget {
           children: [
             Motivazione(),
             Esercizi(),
+            Profilo(),
             Contatti(),
           ],
         ),

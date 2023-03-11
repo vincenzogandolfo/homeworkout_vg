@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homeworkout_vg/models/top_screen_model.dart';
 
 import '../../models/components_model.dart';
 import '../../models/type_button_model.dart';
@@ -20,27 +21,9 @@ class Esercizi extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                Image.asset(
-                  'images/logo.png',
-                  height: 60,
-                ),
-                const Text(
-                  'Esercizi',
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-                ),
-                const Text(
-                  'Seleziona una parte del corpo!',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
+          const TopScreenModel(
+            title: 'Esercizi',
+            subtitle: 'Seleziona una parte del corpo!',
           ),
           Expanded(
             flex: 3,
