@@ -17,7 +17,6 @@ class UserPreferences {
   );
 
   // Creazione Database (init)
-
   static Future init() async =>
       _preferences = await SharedPreferences.getInstance();
 
