@@ -6,8 +6,21 @@ import 'screen/esercizi_screen.dart';
 import 'screen/motivazione_screen.dart';
 import 'screen/contatti_screen.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 4, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +39,17 @@ class HomePage extends StatelessWidget {
           title: const Text(
             'HomeWorkout  VG',
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
           centerTitle: true,
-          bottom: const TabBar(
+          bottom: TabBar(
+            controller: _tabController,
             indicatorColor: Colors.greenAccent,
             indicatorWeight: 8,
-            tabs: [
+            tabs: const [
               Tab(
                 icon: TabIconModel(
                   tabIcon: FontAwesomeIcons.heart,
@@ -59,8 +73,9 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        body: const TabBarView(
-          children: [
+        body: TabBarView(
+          controller: _tabController,
+          children: const [
             Motivazione(),
             Esercizi(),
             Profilo(),

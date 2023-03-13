@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:homeworkout_vg/models/top_screen_model.dart';
+import 'package:homeworkout_vg/pages/donna_page.dart';
+import 'package:homeworkout_vg/pages/uomo_page.dart';
 
 import '../../models/components_model.dart';
-import '../../models/type_button_model.dart';
+import '../../models/sex_button_model.dart';
 import '../../widgets/body_components/addome.dart';
 import '../../widgets/body_components/braccia.dart';
 import '../../widgets/body_components/cardio.dart';
@@ -169,13 +171,13 @@ class Esercizi extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        const TypeButtonModel('Uomo'),
+                        const SexButtonModel('Uomo', UomoPage()),
                         Container(
                           height: 40,
                           width: 1,
                           color: Colors.white,
                         ),
-                        const TypeButtonModel('Donna'),
+                        const SexButtonModel('Donna', DonnaPage()),
                       ],
                     ),
                   ),

@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 
-class TypeButtonModel extends StatelessWidget {
+class SexButtonModel extends StatelessWidget {
   final String tipo;
-  const TypeButtonModel(this.tipo, {super.key});
+  final Widget sexPage;
+
+  const SexButtonModel(this.tipo, this.sexPage, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Center(
         child: TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => sexPage,
+              ),
+            );
+          },
           child: Text(
             tipo,
             style: const TextStyle(
